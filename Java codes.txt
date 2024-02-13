@@ -1,0 +1,217 @@
+# HOW TO WRITE STRINGS AND HOW TO GET USER INPUT STRINGSSS :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        String name = "DEEP";
+        System.out.print("The name is :- ");
+        System.out.print(name);
+
+        int a=6;
+        float b=55.55f;
+        System.out.printf("The value of a is %d and the value of b is %f", a,b);
+
+        Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine();
+        System.out.println(st);
+    }
+}
+
+
+#STRING METHODSSS :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        String name = "Harry";
+         System.out.println(name);
+        int value = name.length();
+        System.out.println(value);
+
+        String lstring = name.toLowerCase();
+        System.out.println(lstring);
+
+        String ustring = name.toUpperCase();
+        System.out.println(ustring);
+
+        String nonTrimmedString = "     Harry     ";
+        System.out.println(nonTrimmedString);
+
+        String trimmedString = nonTrimmedString.trim();
+        System.out.println(trimmedString);
+
+        System.out.println(name.substring(1));
+        System.out.println(name.substring(1,5));
+
+        System.out.println(name.replace('r', 'p'));
+        System.out.println(name.replace("r", "ier"));
+
+        System.out.println(name.startsWith("Har"));
+        System.out.println(name.endsWith("dd"));
+
+        System.out.println(name.charAt(4));
+
+        String modifiedName = "Harryrryrry";
+        System.out.println(modifiedName.indexOf("rry"));
+        System.out.println(modifiedName.indexOf("rry", 4));
+        System.out.println(modifiedName.lastIndexOf("rry", 7));
+
+        System.out.println(name.equals("Harry"));
+        System.out.println(name.equalsIgnoreCase("HarRY"));
+
+        System.out.println("I am escape sequence\tdouble quote");
+
+    }
+}
+
+
+# IF ELSE CONDITIONSSSS :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        if(a==0)
+            System.out.println("it is 0 condition");
+        else if(a>0)
+            System.out.println("it is positive");
+        else
+            System.out.println("it is negative");
+    }
+}
+
+
+# LOGICAL OPERATORSSS :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        System.out.println("For logical AND");
+        boolean a = true;
+        boolean b = false;
+        if(a && b )
+            System.out.println("Yes");
+        else
+        System.out.println("No");
+        // t,t=yes  t,f=no  f,t=no  f,f=no
+
+        System.out.println("For logical OR");
+        if(a || b )
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+        // t,t=yes  t,f=yes  f,t=yes  f,f=no
+
+        System.out.println("For logical NOT");
+        System.out.print("Not(a) is ");
+        System.out.println(!a);
+        System.out.print("Not(b) is ");
+        System.out.println(!b);
+    }
+}
+
+
+# SWITCH CASE :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("total there is 7 Bunglows");
+        System.out.println("Enter your Bunglow no");
+        Scanner sc = new Scanner(System.in);
+        int no = sc.nextInt();
+        if(no>=7)
+            System.out.println(" Sorry ! Only there is 7 Bunglows");
+        else
+        switch (no)
+        {
+            case 1:
+                System.out.println("This is Patel's Bunblow");
+                break;
+            case 2:
+                System.out.println("This is Singh's Bunblow");
+                break;
+            case 3:
+                System.out.println("This is Marvadi's Bunblow");
+                break;
+            case 4:
+                System.out.println("This is Sikh's Bunblow");
+                break;
+            case 5:
+                System.out.println("This is Pandey's Bunblow");
+                break;
+            case 6:
+                System.out.println("This is Bunblow is closed");
+                break;
+            case 7:
+                System.out.println("This is Owner's Bunblow");
+                break;
+
+        }
+        System.out.println("Thanks for Visiting");
+        System.out.println("HAVE A NICE DAY");
+    }
+}
+
+
+# BREAK AND CONTINUE STATEMENTS :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+
+        System.out.println("BREAK STATEMENT");
+        for(int i=0;i<5;i++)
+        {
+
+            if(i==2)
+            {
+                System.out.println(i);
+                break;
+            }
+            System.out.println(i);
+        }
+
+        System.out.println("CONTINUE STATEMENT");
+        for(int i=0;i<5;i++)
+        {
+
+            if(i==2)
+            {
+                continue;
+            }
+            System.out.println(i);
+        }
+    }
+}
+
+
+
+
+
