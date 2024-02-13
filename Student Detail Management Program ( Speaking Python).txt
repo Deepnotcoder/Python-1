@@ -1,0 +1,180 @@
+
+# my ROBO SPEAKER.....1.0
+
+import pyttsx3
+
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+
+engine.setProperty('voice', voices[1].id)
+
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate-60)
+
+while True:
+    text = input("Enter the text you want to speak : ")
+    if text.lower() == 'exit':
+        break
+    engine.say(text)
+    engine.runAndWait()
+
+# Student detail managment program :--
+
+import pyttsx3
+
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+
+engine.setProperty('voice', voices[0].id)
+
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate-40)
+text = ("\nHello Friends,\nWelcome to My Student Detail Management Python Project\nSo Below there Are some Options . What You Want to see")
+print("\nHello Friends,\n              Welcome to My Student Detail Management Python Project\n\n--- :  So Below there Are some Options . What You Want to see : ---")
+engine.say(text)
+engine.runAndWait()
+
+
+print("\n---------------------------------------------------------IT CLASSES --------------------------------------------------------------------------\n")
+
+class Displaytotalclasses:
+    print("1. There are total 3 Classes")
+class Displayclasswiththeirname:
+    print("2. Display classes with their name:")
+class exit:
+    print("3. To quit")
+
+
+class ClassA:
+        def Aclass(self):
+                print("\n :- You are in Class A")
+                print(" :- There are total 10 students in Class A : ")
+                Name = ["\n1.Deep", "2.Nihar", "3.Ekansh", "4.Jatin", "5.Dev", "6.Het", "7.Sahil", "8.Prince", "9.Sneh","10.shlok"]
+                for Name in Name:
+                    print(Name)
+                Num = int(input("\nEnter the Name of student N0. : "))
+                if Num == 1:
+                    print("\nFull Name = Patel Deep Shaileshbhai\nEnrolment No. = 22BEIT300x1\nAddres = Hansol\nAge = 20\nGender = Male\n")
+                elif Num == 2:
+                    print("\nFull Name = Patel Nihar Bharatbhai\nEnrolment No. = 22BEIT300x2\nAddres = Airport road\nAge = 20\nGender = Male\n ")
+                elif Num == 3:
+                    print("\nFull Name = Ekansh Jain\nEnrolment No. = 22BEIT300x3\nAddres = Rakhial\nAge = 20\nGender = Male\n ")
+                elif Num == 4:
+                    print("\nFull Name = Jatin Torani\nEnrolment No. = 22BEIT300x4\nAddres = Nikol\nAge = 20\nGender = Male\n ")
+                elif Num == 5:
+                    print("\nFull Name = Patel Dev Rajubhai\nEnrolment No. = 22BEIT300x5\nAddres = Koba\nAge = 20\nGender = Male\n ")
+                elif Num == 6:
+                    print("\nFull Name = Patel Het Rajubhai\nEnrolment No. = 22BEIT300x6\nAddres = Airport road\nAge = 20\nGender = Male\n ")
+                elif Num == 7:
+                    print("\nFull Name = Patel Sahil\nEnrolment No. = 22BEIT300x7\nAddres = Dehgham\nAge = 20\nGender = Male\n ")
+                elif Num == 8:
+                    print("\nFull Name = Patel Prince \nEnrolment No. = 22BEIT300x8\nAddres = Unjha\nAge = 20\nGender = Male\n ")
+                elif Num == 9:
+                    print("\nFull Name = Patel Sneh Kaushikbhai\nEnrolment No. = 22BEIT300x9\nAddres = New Ranip\nAge = 20\nGender = Male\n ")
+                elif Num == 10:
+                    print("\nFull Name = Shlok Pandya\nEnrolment No. = 22BEIT300x10\nAddres = Naroda\nAge = 20\nGender = Male\n ")
+                else:
+                    print("Sorry ! there are only 4 Students in Class A")
+
+class ClassB:
+        def Bclass(self):
+            print("\n :- You are in Class B ")
+            print(" :- There are total 7 students in Class B : ")
+            Name = ["\n1.Deep", "2.Nihar", "3.Ekansh", "4.Jatin", "5.Dev", "6.Het", "7.Sahil"]
+            for Name in Name:
+                print(Name)
+            Num = int(input("\nEnter the Name of student N0. : "))
+            if Num == 1:
+                print("\nFull Name = Patel Deep Shaileshbhai\nEnrolment No. = 22BEIT300x1\nAddres = Hansol\nAge = 20\nGender = Male\n")
+            elif Num == 2:
+                print("\nFull Name = Patel Nihar Bharatbhai\nEnrolment No. = 22BEIT300x2\nAddres = Airport road\nAge = 20\nGender = Male\n ")
+            elif Num == 3:
+                print("\nFull Name = Ekansh Jain\nEnrolment No. = 22BEIT300x3\nAddres = Rakhial\nAge = 20\nGender = Male\n ")
+            elif Num == 4:
+                print("\nFull Name = Jatin Torani\nEnrolment No. = 22BEIT300x4\nAddres = Nikol\nAge = 20\nGender = Male\n ")
+            elif Num == 5:
+                print("\nFull Name = Patel Dev Rajubhai\nEnrolment No. = 22BEIT300x5\nAddres = Koba\nAge = 20\nGender = Male\n ")
+            elif Num == 6:
+                print("\nFull Name = Patel Het Rajubhai\nEnrolment No. = 22BEIT300x6\nAddres = Airport road\nAge = 20\nGender = Male\n ")
+            elif Num == 7:
+                print("\nFull Name = Patel Sahil\nEnrolment No. = 22BEIT300x7\nAddres = Dehgham\nAge = 20\nGender = Male\n ")
+            else:
+                print("Sorry ! there are only 7 Students in Class B")
+
+
+class ClassC:
+    def Cclass(self):
+        print("\n :- You are in Class C ")
+        print(" :- There are total 4 students in Class C : ")
+        Name = ["\n1.Sahil", "2.Prince", "3.Sneh", "4.Shlok"]
+        for Name in Name:
+            print(Name)
+        Num = int(input("\nEnter the Name of student N0. : "))
+        if Num == 1:
+            print("\nFull Name = Patel Sahil\nEnrolment No. = 22BEIT300x7\nAddres = Dehgham\nAge = 20\nGender = Male\n ")
+
+        elif Num == 2:
+            print("\nFull Name = Patel Prince \nEnrolment No. = 22BEIT300x8\nAddres = Unjha\nAge = 20\nGender = Male\n ")
+
+        elif Num == 3:
+            print("\nFull Name = Patel Sneh Kaushikbhai\nEnrolment No. = 22BEIT300x9\nAddres = New Ranip\nAge = 20\nGender = Male\n ")
+        elif Num == 4 :
+             print("\nFull Name = Shlok Pandya\nEnrolment No. = 22BEIT300x10\nAddres = Naroda\nAge = 20\nGender = Male\n ")
+        else :
+            print("Sorry ! there are only 4 Students in Class C")
+
+
+Give=int(input('\nEnter the number that you want : '))
+if Give==1:
+      print("1.Class A\n2.Class B\n3.Class C")
+      Input = str(input("\nEnter the class : "))
+      if Input=="A":
+           object4 = ClassA()
+           object4.Aclass()
+      elif Input == "B":
+           object5 = ClassB()
+           object5.Bclass()
+      else:
+           object6 = ClassC()
+           object6.Cclass()
+
+elif Give==2:(
+               print("1.Class A\n2.Class B\n3.Class C"))
+
+elif Give==3:
+    print("\nYou Are Successfully Quited")
+
+
+print("\n\n-----------------------------------------------Thanks for visiting----------------------------------------------------------")
+
+text = " Thanks for visiting "
+engine = pyttsx3.init()
+engine.say(text)
+engine.runAndWait()
+
+object1 = Displaytotalclasses()
+object2 = Displayclasswiththeirname()
+object3 = exit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
