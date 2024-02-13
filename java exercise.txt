@@ -1,0 +1,204 @@
+# QUIZZZZ :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        System.out.println("what is 1+1 ?");
+        System.out.println("1=2");
+        System.out.println("2=3");
+        System.out.println("3=4");
+        System.out.println("4=5");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        if(a<=1)
+            System.out.println("CORRECT ANSWER");
+        else
+            System.out.println("wrong answer");
+        System.out.println(a);
+    }
+}
+
+# CHECK STUDENT WHEATHER PASS OR FAIL , TOTAL 40% AND EACH SUBJECT 33% REQUIRED :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        byte m1, m2, m3;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your marks in Physics");
+        m1 = sc.nextByte();
+
+       System.out.println("Enter your marks in Chemistry");
+       m2= sc.nextByte();
+
+        System.out.println("Enter your marks in Mathematics");
+        m3 = sc.nextByte();
+        float avg = (m1+m2+m3)/3.0f;
+        if(avg>=40 && m1>=33 && m2>=33 && m3>=33)
+        {
+            System.out.println("Congratulations, You have been promoted");
+        }
+        else
+        {
+            System.out.println("Sorry, You have not been promoted! Please try again.");
+        }
+
+    }
+}
+
+
+# STONE , PAPER , SCISSOR GAME :-
+
+package com.company;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("NOTE THIS FIRST\n\t 1=STONE\n\t 2=PAPER\n\t 3=SCISSOR");
+        System.out.println("enter any no. 1 , 2 or 3=");
+
+        int a=1;
+        int b=2;
+        int c=3;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("x=");
+        int x = sc.nextInt();
+        System.out.print("y=");
+        Scanner ab = new Scanner(System.in);
+        int y = ab.nextInt();
+
+        if (x<=3 && y<=3)
+        {
+            if (x == 1 && y == 2) 
+                System.out.println("x is winner");
+            else if (x == 2 && y == 1) 
+                System.out.println("y is winner");
+            else if (x == 2 && y == 3) 
+                System.out.println("y is winner");
+            else if (x == 3 && y == 2)
+                System.out.println("x is winner");
+            else if (x == 3 && y == 1) 
+                System.out.println("y is winner");
+            else if (x == 1 && y == 3) 
+                System.out.println("x is winner");
+            else if (x == 1 && y == 1) 
+                System.out.println("it's an tie");
+            else if (x == 2 && y == 2) 
+                System.out.println("it's an tie");
+            else if (x == 3 && y == 3) 
+                System.out.println("it's an tie");
+            
+            System.out.println("thanks for playing");
+        }
+        System.out.println("sorry this number is not available");
+
+        System.out.println("thanks for playing");
+    }
+}
+
+# CALCULATOR :-
+
+package com.company;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("WE MADE THIS CALCULATOR");
+        System.out.println("NOTE THIS FIRST\n\t 1=ADDITION\n\t 2=SUBTRACTION\n\t 3=MULTIPLICATION\n\t 4=DIVISION\n\t 5=PERCENTAGE");
+        System.out.println("enter any no. 1 , 2 , 3 , 4 , 5 =");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("x = ");
+        int x = sc.nextInt();
+        if(x>0 && x<6)
+        {
+
+            if (x < 2 && x > 0)
+            {
+
+                Scanner ab = new Scanner(System.in);
+                System.out.print("a = ");
+                int a = ab.nextInt();
+                Scanner mu1 = new Scanner(System.in);
+                System.out.print("b = ");
+                int b = mu1.nextInt();
+                int ANS = (a + b);
+                System.out.print("ANS = ");
+                System.out.println(ANS);
+            } else if (x < 3 && x > 1) {
+
+                Scanner abc = new Scanner(System.in);
+                System.out.print("a = ");
+                int a = abc.nextInt();
+                Scanner mu1 = new Scanner(System.in);
+                System.out.print("b = ");
+                int b = mu1.nextInt();
+                int ANS = ((a) - (b));
+                System.out.println("ANS = ");
+                System.out.println(ANS);
+            }
+            else if (x < 4 && x > 2)
+            {
+
+                Scanner abc = new Scanner(System.in);
+                System.out.print("a = ");
+                int a = abc.nextInt();
+                Scanner mu1 = new Scanner(System.in);
+                System.out.print("b = ");
+                int b = mu1.nextInt();
+                int ANS = (a * b);
+                System.out.print("ANS = ");
+                System.out.println(ANS);
+            }
+            else if (x < 5 && x > 3)
+            {
+
+                Scanner abc = new Scanner(System.in);
+                System.out.print("a = ");
+                int a = abc.nextInt();
+                Scanner mu1 = new Scanner(System.in);
+                System.out.print("b = ");
+                int b = mu1.nextInt();
+                if (a > b) {
+                    int ANS = (a / b);
+                    System.out.print("ANS = ");
+                    System.out.println(ANS);
+                } else {
+                    System.out.println("Sorry ! d should be greater than e");
+                }
+            }
+            if (x < 6 && x > 4)
+            {
+
+                Scanner ab = new Scanner(System.in);
+                System.out.print("a = ");
+                int a = ab.nextInt();
+                float ANS = a / 100f;
+                System.out.print("ANS = ");
+                System.out.println(ANS);
+
+
+                System.out.println("THANKS FOR USING ............");
+                System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tmade by-------DEEP");
+            }
+        }
+        else
+        {
+            System.out.println("x should be greater than 0 and less than 6");
+        }
+    }
+}
