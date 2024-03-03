@@ -1,0 +1,78 @@
+import random
+import tkinter as tk
+
+# List
+movies = ["Animal",'Dunki','Gadar2','Omg2']
+selected_movie = random.choice(movies).lower()
+
+# Lists to track guessed letters and correct guesses
+guessed_letters = []
+correct_guesses = []
+
+# Function to check the guessed letter
+def check_guess():
+    guess = guess_entry.get().lower()
+    if guess in guessed_letters:
+        result_label.config(text="You already guessed that letter. Try again.", fg="red")
+    else:
+        guessed_letters.append(guess)
+        if guess in selected_movie:
+            correct_guesses.append(guess)
+            update_display()
+            if "_" not in display_label.cget("text"):
+                result_label.config(text="Congratulations! You guessed the movie: " + selected_movie.capitalize(), fg="green")
+        else:
+            result_label.config(text="Incorrect guess. Try again.", fg="red")
+
+# Function to update the display of the movie
+def update_display():
+    display = "Movie: "
+    for letter in selected_movie:
+        if letter in correct_guesses:
+            display += letter + " "
+        else:
+            display += "_ "
+    display_label.config(text=display)
+
+
+# Create the Tkinter window
+root = tk.Tk()
+root.title("Movie Guessing Game")
+root.configure(background="#F0F0F0")
+
+# Decorative Title
+title_label = tk.Label(root, text="🎬 Movie Guessing Game 🍿", font=("Arial", 30, 'bold'), bg="#F0F0F0", fg="#333")
+title_label.pack(pady=20)
+
+# Decorative Line
+line_label = tk.Label(root, text="---------------------------------------------------------------------------------------------------", font=("Arial", 15, 'bold'), bg="#F0F0F0")
+line_label.pack()
+
+# Instruction Label
+instruction_label = tk.Label(root, text=" Guess the letters (can also contain numbers) ", font=("Arial", 20, 'bold'), background="#F0F0F0")
+instruction_label.pack(pady=10)
+
+# Display Label
+display_label = tk.Label(root, text="", font=("Arial", 20, 'bold'), background="#F0F0F0")
+display_label.pack(pady=10)
+
+# Guess Entry
+guess_entry = tk.Entry(root, font=("Arial", 20, 'bold'), bd=5,width=3)
+guess_entry.pack(pady=10)
+
+# Guess Button
+guess_button = tk.Button(root, text="Guess", command=check_guess, font=("Arial", 20, 'bold'), background="#4CAF50", bd=3, fg="white")
+guess_button.pack(pady=10)
+
+line_label = tk.Label(root, text="-----------------------------------------------------------------------------------------------------", font=("Arial", 15, 'bold'), bg="#F0F0F0")
+line_label.pack()
+
+# Result Label
+result_label = tk.Label(root, text="", font=("Arial", 20, 'bold'), background="#F0F0F0")
+result_label.pack()
+
+# Update the display initially
+update_display()
+
+# Run the Tkinter event loop
+root.mainloop()
