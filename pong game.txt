@@ -1,0 +1,84 @@
+import random
+import pygame
+
+pygame.init()
+
+screen = pygame.display.set_mode((1100, 700))
+background = pygame.image.load('C:\\Users\\admin\\Desktop\\backpong.png')
+
+# PLAYER 1
+one_img = pygame.image.load('C:\\Users\\admin\\Desktop\\paddle.jpg')
+one_axis = one_img.get_rect(topleft=(0, 250))
+
+# PLAYER 2
+two_img = pygame.image.load('C:\\Users\\admin\\Desktop\\paddle.jpg')
+two_axis = two_img.get_rect(topright=(1100, 250))
+
+# Ball
+ball_img = pygame.image.load('C:\\Users\\admin\\Desktop\\ball12.png')
+ball_axis = ball_img.get_rect(topright=(400, 300))
+
+speed_x = 1
+speed_y = 1
+speed = 1
+
+font = pygame.font.Font(None,70)
+text = font.render("Game Over ! ", True, (255, 255, 255))
+
+# GAME LOOP
+run = True
+winner = None  # Variable to store the winner
+while run:
+    screen.fill((0, 0, 0))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_w]:
+        one_axis.y -= speed
+        if one_axis.top < 0:
+            one_axis.top = 0
+    if keys[pygame.K_s]:
+        one_axis.y += speed
+        if one_axis.bottom > 700:
+            one_axis.bottom = 700
+    if keys[pygame.K_UP]:
+        two_axis.y -= speed
+        if two_axis.top < 0:
+            two_axis.top = 0
+    if keys[pygame.K_DOWN]:
+        two_axis.y += speed
+        if two_axis.bottom > 700:
+            two_axis.bottom = 700
+
+    ball_axis.x += speed_x
+    ball_axis.y += speed_y
+
+    if ball_axis.colliderect(one_axis) or ball_axis.colliderect(two_axis):
+        # Randomize the direction after collision
+        speed_x *= random.choice([-1, 1])
+        speed_y *= random.choice([-1, 1])
+
+    if ball_axis.top <= 0 or ball_axis.bottom >= 700:
+        speed_y *= -1
+
+    if ball_axis.left <= 0:
+        winner = "Player 2"
+        run = False
+        screen.blit(text, (500, 300))
+        print("\nPLAYER 2 IS WINNER")
+    elif ball_axis.right >= 1100:
+        winner = "Player 1"
+        run = False
+        screen.blit(text, (500, 300))
+        print("\nPLAYER 1 IS WINNER")
+
+
+    screen.blit(one_img, one_axis)
+    screen.blit(two_img, two_axis)
+    screen.blit(ball_img, ball_axis)
+
+    pygame.display.update()
